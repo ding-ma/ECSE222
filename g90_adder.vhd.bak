@@ -1,0 +1,9 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.NUMERIC_STD.ALL ;
+
+entity g90_adder is port
+	(  A, B 					: in std_logic_vector (4 downto 0);
+		decoded_A 			: out std_logic_vector (13 downto 0);
+		decoded_B 			: out std_logic_vector (13 downto 0);
+		decoded_AplusB 	: out std_logic_vector (13 downto 0); 

@@ -1,0 +1,85 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity g90_stopwatch is
+	Port(
+		start			: in			std_logic;
+		stop			: in			std_logic;
+		reset			: in			std_logic;
+		clk			: in			std_logic;
+		HEX0			: out			std_logic_vector (6 downto 0);
+		HEX1			: out			std_logic_vector (6 downto 0);
+		HEX2			: out			std_logic_vector (6 downto 0);
+		HEX3			: out			std_logic_vector (6 downto 0);
+		HEX4			: out			std_logic_vector (6 downto 0);
+		HEX5			: out			std_logic_vector (6 downto 0);
+	);
+end g90_stopwatch;
+
+architecture behaviour of g90_stopwatch is
+
+	component g90_lab1 is
+		Port(
+			bcd			: in			std_logic_vector (3 downto 0);
+			segment7		: out			std_logic_vector (6 downto 0)
+		);
+	end component g90_lab1;
+
+	component g90_counter is
+		Port(
+			enable			: in		std_logic;
+			reset				: in		std_logic;
+			clk				: in		std_logic;
+			count				: out		std_logic_vector(3 downto 0)
+		);
+	end component g90_counter;
+	
+	component g90_clock_divider is
+		Port(
+			enable			: in		std_logic;
+			reset				: in		std_logic;
+			clk				: in		std_logic;
+			en_out			: out		std_logic
+		);
+	end component g90_clock_divider;
+	
+	signal start_timer : std_logic := '0';
+	signal en_out_clkdivider : std_logic := '0';
+	
+	signal count_ms0 : std_logic_vector (3 downto 0) := "0000";
+	signal count_ms1 : std_logic_vector (3 downto 0) := "0000";
+	signal count_sec0 : std_logic_vector (3 downto 0) := "0000";
+	signal count_sec1 : std_logic_vector (3 downto 0) := "0000";
+	signal count_min0 : std_logic_vector (3 downto 0) := "0000";
+	signal count_min1 : std_logic_vector (3 downto 0) := "0000";
+	
+	signal reset0 : std_logic := '1';
+	signal reset1 : std_logic := '1';
+	signal reset2 : std_logic := '1';
+	signal reset3 : std_logic := '1';
+	signal reset4 : std_logic := '1';
+	signal reset5 : std_logic := '1';
+	
+	signal clk1 : std_logic := NOT reset0;
+	signal clk2 : std_logic := NOT reset1;
+	signal clk3 : std_logic := NOT reset2;
+	signal clk4 : std_logic := NOT reset3;
+	signal clk5 : std_logic := NOT reset4;
+	
+begin
+	
+	clock_divider:	g90_clock_divider PORT MAP(enable => start_timer, reset => reset, clk => clk, en_out => en_out_clkdivider);
+
+	counter_ms0: g90_counter PORT MAP(enable => start_timer, reset => reset0, clk => en_out_clkdivider, count => count_ms0);
+	counter_ms1: g90_counter PORT MAP(enable => start_timer, reset => reset1, clk => clk1, count => count_ms1);
+	counter_sec0: g90_counter PORT MAP(enable => start_timer, reset => reset2, clk => clk2, count => count_sec0);
+	counter_sec1: g90_counter PORT MAP(enable => start_timer, reset => reset3, clk => clk3, count => count_sec1);
+	counter_min0: g90_counter PORT MAP(enable => start_timer, reset => reset4, clk => clk4, count => count_min0);
+	counter_min1: g90_counter PORT MAP(enable => start_timer, reset => reset5, clk => clk5, count => count_min1);
+	
+	
+	
+	
+end behaviour;

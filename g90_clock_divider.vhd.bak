@@ -1,0 +1,63 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+--declare clock divider entity with three boolean inputs (enalble, reset, clk)
+--and one boolean output (en_out)
+
+entity g90_clock_divider is
+	--declare a time factor
+	--Because 10 miliseconds elapses 500000 PLL events, a change in clk occurs every 500000 PLL events
+	Generic (constant T : integer := 500000
+			);
+	
+	Port (enable : in std_logic;
+			reset : in std_logic;
+			clk : in std_logic;
+			en_out : out std_logic
+			);
+end g90_clock_divider;
+
+--dcreate architecture for counter
+architecture behaviour of g90_clock_divider is	--create signal to hold current count value which will be assigned to the output vector count
+	
+	signal T_temp : integer := T-1;
+	signal en_out_temp : std_logic := '0';
+
+begin
+	--declare a process block since this is a sequential circuit
+	--define clk and reset in sensitivity list as variables we keep track of
+	--all other variables are synchronized with clk
+	Process(clk, reset) begin
+		
+		--check the value of reset first because it is an asynchronous signal (takes priority)
+		--reset is active low
+		if(falling_edge(reset)) then
+			T_temp <= T-1;
+			en_out_temp <= '0';
+		
+		--check for rising edge
+		elsif(rising_edge(clk)) then
+			
+			--check if enable is on (enable is active high)
+			if(enable = '1') then
+				T_temp <= T_temp - 1;
+			else
+				T_temp <= T_temp;
+			end if;
+			
+			--check value of T_temp
+			if(T_temp > 0) then
+				en_out_temp <= '0';
+			else
+				en_out_temp <= '1';
+				T_temp <= T-1;
+			end if;
+		end if;
+			
+	end Process;
+	
+	--assign T_temp to count
+	en_out <= en_out_temp;
+	
+end behaviour;
