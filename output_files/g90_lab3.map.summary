@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Failed - Fri Apr 05 13:05:05 2019
+Analysis & Synthesis Status : Failed - Fri Apr 05 13:42:58 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : g90_lab3
-Top-level Entity Name : g90_FSM
+Top-level Entity Name : g90_multi_mode_counter
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge
