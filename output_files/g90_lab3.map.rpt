@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g90_lab3
-Fri Apr 05 13:42:58 2019
+Mon Apr 08 03:10:54 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Fri Apr 05 13:42:58 2019           ;
+; Analysis & Synthesis Status ; Failed - Mon Apr 08 03:10:54 2019           ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; g90_lab3                                    ;
 ; Top-level Entity Name       ; g90_multi_mode_counter                      ;
@@ -160,28 +160,27 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Apr 05 13:42:47 2019
+    Info: Processing started: Mon Apr 08 03:10:42 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g90_lab3 -c g90_lab3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file g90_lab2.vhd
-    Info (12022): Found design unit 1: g90_lab2-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab2.vhd Line: 15
-    Info (12023): Found entity 1: g90_lab2 File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file g90_clock_divider.vhd
+    Info (12022): Found design unit 1: g90_clock_divider-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_clock_divider.vhd Line: 15
+    Info (12023): Found entity 1: g90_clock_divider File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_clock_divider.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file g90_lab1.vhd
     Info (12022): Found design unit 1: g90_lab1-behavioral File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab1.vhd Line: 14
     Info (12023): Found entity 1: g90_lab1 File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab1.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file g90_multi_mode_counter.vhd
-    Info (12022): Found design unit 1: g90_multi_mode_counter-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 16
+    Info (12022): Found design unit 1: g90_multi_mode_counter-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 18
     Info (12023): Found entity 1: g90_multi_mode_counter File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file g90_fsm.vhd
     Info (12022): Found design unit 1: g90_FSM-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_FSM.vhd Line: 13
     Info (12023): Found entity 1: g90_FSM File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_FSM.vhd Line: 5
-Error (10482): VHDL error at g90_multi_mode_counter.vhd(77): object "unsigned" is used but not declared File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 77
-Error (10411): VHDL Type Conversion error at g90_multi_mode_counter.vhd(77): can't determine type of object or expression near text or symbol "std_logic_vector" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 77
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 4857 megabytes
-    Error: Processing ended: Fri Apr 05 13:42:58 2019
-    Error: Elapsed time: 00:00:11
+Error (10568): VHDL error at g90_multi_mode_counter.vhd(70): can't write to interface object "reset" of mode IN File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 70
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 4859 megabytes
+    Error: Processing ended: Mon Apr 08 03:10:54 2019
+    Error: Elapsed time: 00:00:12
     Error: Total CPU time (on all processors): 00:00:27
 
 

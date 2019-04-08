@@ -7,7 +7,7 @@ entity g90_FSM is
 			direction	: in std_logic;
 			reset		: in std_logic;
 			clk			: in std_logic;
-			count		: out std_logic(3 downto 0));
+			count		: out std_logic_vector(3 downto 0));
 end g90_FSM;
 
 architecture behaviour of g90_FSM is
@@ -17,7 +17,7 @@ begin
 
 Process(clk, reset) begin
 		if(reset = '0') then
-			if (direction = '1') then
+			if (direction = '1') then --active high
 				count_temp <= A;
 			else
 				count_temp <= O;
@@ -25,6 +25,7 @@ Process(clk, reset) begin
 			
 		elsif(rising_edge(clk)) then
 			if(enable = '1') then
+			
 				case count_temp is
 					when A =>
 						if (direction = '1') then
@@ -116,34 +117,33 @@ Process(clk, reset) begin
 						else
 							count_temp <= N;
 						end if;
+						
 				end case;
 					
 			else
 				count_temp <= count_temp;
 			end if;
 		end if;
+	end process;
 		
-			case count is
-	
-	when A => count_temp <= "0001";
-	when B => count_temp <= "0010";
-	when C => count_temp <= "0100";
-	when D => count_temp <= "1000";
-	when E => count_temp <= "0011";
-	when F => count_temp <= "0110";
-	when G => count_temp <= "1100";
-	when H => count_temp <= "1100";
-	when I => count_temp <= "0101";
-	when J => count_temp <= "1010";
-	when K => count_temp <= "0111";
-	when L => count_temp <= "1110";
-	when M => count_temp <= "1111";
-	when N => count_temp <= "1101";
-	when O => count_temp <= "1001";
-	
-end case;
-	end Process;
-	
-
+with count_temp select count <=
+   "0001" when  A,
+   "0010" when  B,
+	"0100" when  C,
+	"1000" when  D,
+	"0011" when  E,
+	"0110" when  F,
+	"1100" when  G,
+	"1100" when  H,
+	"0101" when  I,
+	"1010" when  J,
+	"0111" when  K,
+	"1110" when  L,
+	"1111" when  M,
+	"1101" when  N,
+	"1001" when  O,
+  	"0000" when others;
+  
+		
 
 end behaviour;

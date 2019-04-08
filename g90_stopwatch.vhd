@@ -72,6 +72,7 @@ architecture behaviour of g90_stopwatch is
 	signal reset_3					: std_logic;
 	signal reset_4					: std_logic;
 	signal reset_5					: std_logic;
+	
 	signal reset_clock			: std_logic := '0';
 	signal enable_clock			: std_logic := '0';	
 	
@@ -79,18 +80,23 @@ architecture behaviour of g90_stopwatch is
 --the logic
 begin
 	
+	--these are being started much like a main method, or a run method starting threads (signals) sequentially 
+	
 	process(start,stop,reset,clk,HEX0_UNDECODED,HEX1_UNDECODED,HEX2_UNDECODED,HEX3_UNDECODED,HEX4_UNDECODED,HEX5_UNDECODED,enable_0,enable_1,enable_2,enable_3,enable_4,enable_5)
 	begin
 		
+		-- if reset has a rising edge (i.e. not being pressed)
 		if (rising_edge(reset)) then
+		-- set reset_clock to 0 (i.e. OFF or not being reset) 
 			reset_clock <= '0';
 		end if;
-		
+		--if stop is not being pressed
 		if (stop = '0') then
+		--
 			enable_clock <= '0';
 		else
 			if (rising_edge(start)) then
-				enable_clock <= NOT enable_clock;
+				enable_clock <= '0';
 			end if;
 		end if;
 		
