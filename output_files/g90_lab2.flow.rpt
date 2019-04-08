@@ -1,5 +1,5 @@
 Flow report for g90_lab2
-Mon Apr 08 10:53:10 2019
+Mon Apr 08 12:35:02 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Apr 08 10:53:10 2019       ;
+; Flow Status                     ; Successful - Mon Apr 08 12:35:02 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; g90_lab2                                    ;
 ; Top-level Entity Name           ; g90_stopwatch                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 55 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 68                                          ;
+; Logic utilization (in ALMs)     ; 58 / 32,070 ( < 1 % )                       ;
+; Total registers                 ; 64                                          ;
 ; Total pins                      ; 46 / 457 ( 10 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/08/2019 10:52:03 ;
+; Start date & time ; 04/08/2019 12:12:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; g90_lab2            ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+---------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name   ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+---------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 963354560455.155473512213216           ; --            ; --            ; --             ;
+; COMPILER_SIGNATURE_ID               ; 963354560455.155473993007652           ; --            ; --            ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --            ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --            ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --            ; eda_simulation ;
@@ -99,12 +99,19 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4873 MB             ; 00:00:27                           ;
-; Fitter               ; 00:00:35     ; 1.0                     ; 6575 MB             ; 00:01:06                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4851 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 5153 MB             ; 00:00:07                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4757 MB             ; 00:00:02                           ;
-; Total                ; 00:01:02     ; --                      ; --                  ; 00:01:49                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4873 MB             ; 00:00:28                           ;
+; Fitter               ; 00:00:35     ; 1.0                     ; 6638 MB             ; 00:01:07                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4853 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 5154 MB             ; 00:00:07                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4760 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4728 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4728 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4728 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4728 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4728 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4728 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4728 MB             ; 00:00:01                           ;
+; Total                ; 00:01:13     ; --                      ; --                  ; 00:01:58                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,6 +125,13 @@ refer to the applicable agreement for further details.
 ; Assembler            ; DESKTOP-Q4O8SV9  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; DESKTOP-Q4O8SV9  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-Q4O8SV9  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-Q4O8SV9  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-Q4O8SV9  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-Q4O8SV9  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-Q4O8SV9  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-Q4O8SV9  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-Q4O8SV9  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-Q4O8SV9  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -129,6 +143,13 @@ quartus_fit --read_settings_files=off --write_settings_files=off g90_lab2 -c g90
 quartus_asm --read_settings_files=off --write_settings_files=off g90_lab2 -c g90_lab2
 quartus_sta g90_lab2 -c g90_lab2
 quartus_eda --read_settings_files=off --write_settings_files=off g90_lab2 -c g90_lab2
+quartus_eda --read_settings_files=on --write_settings_files=off g90_lab2 -c g90_lab2 --gen_testbench
+quartus_eda --read_settings_files=on --write_settings_files=off g90_lab2 -c g90_lab2 --gen_testbench
+quartus_eda --read_settings_files=on --write_settings_files=off g90_lab2 -c g90_lab2 --gen_testbench
+quartus_eda --read_settings_files=on --write_settings_files=off g90_lab2 -c g90_lab2 --gen_testbench
+quartus_eda --read_settings_files=on --write_settings_files=off g90_lab2 -c g90_lab2 --gen_testbench
+quartus_eda --read_settings_files=on --write_settings_files=off g90_lab2 -c g90_lab2 --gen_testbench
+quartus_eda --read_settings_files=on --write_settings_files=off g90_lab2 -c g90_lab2 --gen_testbench
 
 
 

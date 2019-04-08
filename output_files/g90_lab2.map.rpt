@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g90_lab2
-Mon Apr 08 10:52:15 2019
+Mon Apr 08 12:12:23 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,10 +14,10 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+  9. Logic Cells Representing Combinational Loops
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
  13. Port Connectivity Checks: "g90_clock_divider:Clock_Divider_0"
  14. Post-Synthesis Netlist Statistics for Top Partition
  15. Elapsed Time Per Partition
@@ -47,7 +47,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr 08 10:52:15 2019       ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr 08 12:12:23 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; g90_lab2                                    ;
 ; Top-level Entity Name           ; g90_stopwatch                               ;
@@ -167,8 +167,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -189,14 +188,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 58        ;
+; Estimate of Logic utilization (ALMs needed) ; 61        ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 101       ;
+; Combinational ALUT usage for logic          ; 106       ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 14        ;
-;     -- 5 input functions                    ; 12        ;
-;     -- 4 input functions                    ; 40        ;
-;     -- <=3 input functions                  ; 35        ;
+;     -- 6 input functions                    ; 15        ;
+;     -- 5 input functions                    ; 9         ;
+;     -- 4 input functions                    ; 46        ;
+;     -- <=3 input functions                  ; 36        ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 40        ;
 ;                                             ;           ;
@@ -206,8 +205,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 40        ;
-; Total fan-out                               ; 591       ;
-; Average fan-out                             ; 2.54      ;
+; Total fan-out                               ; 609       ;
+; Average fan-out                             ; 2.56      ;
 +---------------------------------------------+-----------+
 
 
@@ -216,7 +215,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name       ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+-------------------+--------------+
-; |g90_stopwatch                         ; 101 (12)            ; 40 (0)                    ; 0                 ; 0          ; 46   ; 0            ; |g90_stopwatch                                   ; g90_stopwatch     ; work         ;
+; |g90_stopwatch                         ; 106 (17)            ; 40 (0)                    ; 0                 ; 0          ; 46   ; 0            ; |g90_stopwatch                                   ; g90_stopwatch     ; work         ;
 ;    |g90_clock_divider:Clock_Divider_0| ; 34 (34)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |g90_stopwatch|g90_clock_divider:Clock_Divider_0 ; g90_clock_divider ; work         ;
 ;    |g90_lab1:decoder_0|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |g90_stopwatch|g90_lab1:decoder_0                ; g90_lab1          ; work         ;
 ;    |g90_lab1:decoder_1|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |g90_stopwatch|g90_lab1:decoder_1                ; g90_lab1          ; work         ;
@@ -241,6 +240,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of user-specified and inferred latches = 1  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; reset_0~0                                              ;   ;
+; Number of logic cells representing combinational loops ; 1 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +-------------------------------------------------------------------------------------+
@@ -288,15 +298,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |g90_stopwatch|reset_0     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
 +---------------------------------------------------------------+
 ; Port Connectivity Checks: "g90_clock_divider:Clock_Divider_0" ;
 +-------+-------+----------+------------------------------------+
@@ -315,21 +316,21 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ;     CLR               ; 20                          ;
 ;     ENA               ; 12                          ;
 ;     ENA SCLR          ; 8                           ;
-; arriav_lcell_comb     ; 108                         ;
+; arriav_lcell_comb     ; 113                         ;
 ;     arith             ; 19                          ;
 ;         1 data inputs ; 19                          ;
-;     normal            ; 89                          ;
+;     normal            ; 94                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 5                           ;
 ;         2 data inputs ; 7                           ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 40                          ;
-;         5 data inputs ; 12                          ;
-;         6 data inputs ; 14                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 46                          ;
+;         5 data inputs ; 9                           ;
+;         6 data inputs ; 15                          ;
 ; boundary_port         ; 46                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.80                        ;
-; Average LUT depth     ; 2.31                        ;
+; Average LUT depth     ; 2.33                        ;
 +-----------------------+-----------------------------+
 
 
@@ -348,7 +349,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Apr 08 10:52:02 2019
+    Info: Processing started: Mon Apr 08 12:12:09 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g90_lab2 -c g90_lab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -366,30 +367,30 @@ Info (12021): Found 2 design units, including 1 entities, in source file g90_sto
     Info (12023): Found entity 1: g90_stopwatch File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 6
 Info (12127): Elaborating entity "g90_stopwatch" for the top level hierarchy
 Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(106): signal "HEX0_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 106
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(116): signal "HEX1_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 116
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(123): signal "HEX2_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 123
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(130): signal "HEX3_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 130
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(137): signal "HEX4_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 137
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(144): signal "HEX5_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 144
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(162): signal "enable_0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 162
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(162): signal "HEX0_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 162
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(168): signal "enable_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 168
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(168): signal "HEX1_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 168
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(174): signal "enable_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 174
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(174): signal "HEX2_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 174
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(180): signal "enable_3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 180
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(180): signal "HEX3_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 180
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(186): signal "enable_4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 186
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(186): signal "HEX4_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 186
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(193): signal "enable_5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 193
-Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(193): signal "HEX5_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 193
-Warning (10631): VHDL Process Statement warning at g90_stopwatch.vhd(85): inferring latch(es) for signal or variable "reset_clock", which holds its previous value in one or more paths through the process File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 85
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(112): signal "HEX1_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(117): signal "HEX2_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(122): signal "HEX3_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 122
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(127): signal "HEX4_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(132): signal "HEX5_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(139): signal "enable_0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 139
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(139): signal "HEX0_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 139
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(145): signal "enable_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 145
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(145): signal "HEX1_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 145
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(151): signal "enable_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 151
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(151): signal "HEX2_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 151
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(157): signal "enable_3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(157): signal "HEX3_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(163): signal "enable_4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(163): signal "HEX4_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(171): signal "enable_5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at g90_stopwatch.vhd(171): signal "HEX5_Decoder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 171
 Warning (10631): VHDL Process Statement warning at g90_stopwatch.vhd(85): inferring latch(es) for signal or variable "enable_clock", which holds its previous value in one or more paths through the process File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 85
-Info (10041): Inferred latch for "enable_clock" at g90_stopwatch.vhd(85) File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 85
+Warning (10631): VHDL Process Statement warning at g90_stopwatch.vhd(85): inferring latch(es) for signal or variable "reset_clock", which holds its previous value in one or more paths through the process File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 85
 Info (10041): Inferred latch for "reset_clock" at g90_stopwatch.vhd(85) File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 85
-Info (12128): Elaborating entity "g90_clock_divider" for hierarchy "g90_clock_divider:Clock_Divider_0" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 207
-Info (12128): Elaborating entity "g90_lab2" for hierarchy "g90_lab2:Counter_0" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 210
-Info (12128): Elaborating entity "g90_lab1" for hierarchy "g90_lab1:decoder_0" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 218
+Info (10041): Inferred latch for "enable_clock" at g90_stopwatch.vhd(85) File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 85
+Info (12128): Elaborating entity "g90_clock_divider" for hierarchy "g90_clock_divider:Clock_Divider_0" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 189
+Info (12128): Elaborating entity "g90_lab2" for hierarchy "g90_lab2:Counter_0" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 192
+Info (12128): Elaborating entity "g90_lab1" for hierarchy "g90_lab1:decoder_0" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 200
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 17
     Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_stopwatch.vhd Line: 17
@@ -401,14 +402,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 148 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 153 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 102 logic cells
+    Info (21061): Implemented 107 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4875 megabytes
-    Info: Processing ended: Mon Apr 08 10:52:15 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 4873 megabytes
+    Info: Processing ended: Mon Apr 08 12:12:23 2019
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:28
 
 

@@ -1,4 +1,4 @@
--- Copyright (C) 2016  Intel Corporation. All rights reserved.
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
 -- Your use of Intel Corporation's design tools, logic functions 
 -- and other software and tools, and its AMPP partner logic 
 -- functions, and any output files from any of the foregoing 
@@ -6,19 +6,18 @@
 -- associated documentation or information are expressly subject 
 -- to the terms and conditions of the Intel Program License 
 -- Subscription Agreement, the Intel Quartus Prime License Agreement,
--- the Intel MegaCore Function License Agreement, or other 
--- applicable license agreement, including, without limitation, 
--- that your use is for the sole purpose of programming logic 
--- devices manufactured by Intel and sold by Intel or its 
--- authorized distributors.  Please refer to the applicable 
--- agreement for further details.
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details.
 
 -- ***************************************************************************
 -- This file contains a Vhdl test bench template that is freely editable to   
 -- suit user's needs .Comments are provided in each section to help the user  
 -- fill out necessary details.                                                
 -- ***************************************************************************
--- Generated on "03/27/2019 21:07:37"
+-- Generated on "04/08/2019 12:35:02"
                                                             
 -- Vhdl Test Bench template for design  :  g90_stopwatch
 -- 
@@ -75,40 +74,15 @@ BEGIN
 init : PROCESS                                               
 -- variable declarations                                     
 BEGIN                                                        
-        -- code that executes only once 
-		clk <= '1';
-		WAIT FOR 1ns;
-		clk <= '0';
-		WAIT FOR 1ns;  		                                                         
+        -- code that executes only once                      
+WAIT;                                                       
 END PROCESS init;                                           
 always : PROCESS                                              
 -- optional sensitivity list                                  
 -- (        )                                                 
 -- variable declarations                                      
-BEGIN
-		--set initial values
-		reset <= '1';	
-      start <= '1';
-		stop <='1';
-		
-		WAIT FOR 5ns;
-		--test start
-		start <= '0';
-		WAIT FOR 5ns;
-		start <='1';
-		WAIT FOR 5ns;
-		
-		--test stop
-		stop <= '0';
-		WAIT FOR 5ns;
-		stop <='1';
-				
-		--test reset
-		reset <= '0';
-		WAIT FOR 5ns;
-		reset <= '1';
-		
-		--test counting		
-WAIT;                                                             
+BEGIN                                                         
+        -- code executes for every event on sensitivity list  
+WAIT;                                                        
 END PROCESS always;                                          
 END g90_stopwatch_arch;
