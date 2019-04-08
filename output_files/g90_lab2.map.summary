@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon Apr 08 05:05:58 2019
+Analysis & Synthesis Status : Successful - Mon Apr 08 10:52:15 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : g90_lab2
 Top-level Entity Name : g90_stopwatch
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 0
+Total registers : 40
 Total pins : 46
 Total virtual pins : 0
 Total block memory bits : 0
