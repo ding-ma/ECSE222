@@ -25,11 +25,13 @@ begin
 		-- set output value to "off" so as not to trigger the count/incrementation for the digits
 			en_out <= '0';
 			
-		-- if reset is "off", and enabled is on (i.e. digit is enabled) decrease value by 1, and make that the new value
+		-- if reset is "off", and enabled is on (i.e. digit is enabled) decrease value by 1,
+			--	and make that the new value
 		elsif(rising_edge(clk)) then
 			if(enable = '1') then
 				elapse <= elapse - "0000000000000000001";
-		-- if time elapsed is negative, required time has passed for iterating once, therefore enabling iterating of digit, and restart		
+		-- if time elapsed is negative, required time has passed for iterating once, 
+			--therefore enabling iterating of digit, and restart		
 				if(elapse > "0000000000000000000") then
 					en_out <= '0';
 				else

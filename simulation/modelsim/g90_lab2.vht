@@ -70,7 +70,7 @@ always : PROCESS
 BEGIN
 		--set initial values
 		reset <= '1';	
-      enable <= '1';
+		enable <= '1';
 		WAIT FOR 33ns;
 		
 		--test enable
@@ -85,6 +85,8 @@ BEGIN
 		reset <= '1';
 		
 		--test counting
+		WAIT FOR 100 ns;
+		enable <= '0';
 		WAIT FOR 100ns;
 		
 WAIT;                                                         
