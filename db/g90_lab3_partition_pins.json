@@ -48,11 +48,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "direction",
 					"strict" : false
 				},
 				{
-					"name" : "direction",
+					"name" : "reset",
 					"strict" : false
 				},
 				{

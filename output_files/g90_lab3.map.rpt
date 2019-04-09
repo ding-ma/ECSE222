@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g90_lab3
-Mon Apr 08 03:10:54 2019
+Tue Apr 09 17:41:38 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,18 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |g90_multi_mode_counter|g90_FSM:FSM|count_tmp
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "g90_lab1:decoder1"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -33,22 +44,27 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Apr 08 03:10:54 2019           ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; g90_lab3                                    ;
-; Top-level Entity Name       ; g90_multi_mode_counter                      ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Apr 09 17:41:38 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; g90_lab3                                    ;
+; Top-level Entity Name           ; g90_multi_mode_counter                      ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 35                                          ;
+; Total pins                      ; 19                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -147,11 +163,188 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+; g90_clock_divider.vhd            ; yes             ; User VHDL File  ; C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_clock_divider.vhd      ;         ;
+; g90_lab1.vhd                     ; yes             ; User VHDL File  ; C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab1.vhd               ;         ;
+; g90_multi_mode_counter.vhd       ; yes             ; User VHDL File  ; C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd ;         ;
+; g90_FSM.vhd                      ; yes             ; User VHDL File  ; C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_FSM.vhd                ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimate of Logic utilization (ALMs needed) ; 41         ;
+;                                             ;            ;
+; Combinational ALUT usage for logic          ; 69         ;
+;     -- 7 input functions                    ; 0          ;
+;     -- 6 input functions                    ; 12         ;
+;     -- 5 input functions                    ; 3          ;
+;     -- 4 input functions                    ; 8          ;
+;     -- <=3 input functions                  ; 46         ;
+;                                             ;            ;
+; Dedicated logic registers                   ; 35         ;
+;                                             ;            ;
+; I/O pins                                    ; 19         ;
+;                                             ;            ;
+; Total DSP Blocks                            ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; enable_tmp ;
+; Maximum fan-out                             ; 36         ;
+; Total fan-out                               ; 406        ;
+; Average fan-out                             ; 2.86       ;
++---------------------------------------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name            ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+------------------------+--------------+
+; |g90_multi_mode_counter              ; 69 (3)              ; 35 (0)                    ; 0                 ; 0          ; 19   ; 0            ; |g90_multi_mode_counter                                 ; g90_multi_mode_counter ; work         ;
+;    |g90_FSM:FSM|                     ; 25 (25)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |g90_multi_mode_counter|g90_FSM:FSM                     ; g90_FSM                ; work         ;
+;    |g90_clock_divider:clock_divider| ; 34 (34)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |g90_multi_mode_counter|g90_clock_divider:clock_divider ; g90_clock_divider      ; work         ;
+;    |g90_lab1:decoder0|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |g90_multi_mode_counter|g90_lab1:decoder0               ; g90_lab1               ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |g90_multi_mode_counter|g90_FSM:FSM|count_tmp                                                                                                                                                                 ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; Name        ; count_tmp.O ; count_tmp.N ; count_tmp.M ; count_tmp.L ; count_tmp.K ; count_tmp.J ; count_tmp.I ; count_tmp.H ; count_tmp.G ; count_tmp.F ; count_tmp.E ; count_tmp.D ; count_tmp.C ; count_tmp.B ; count_tmp.A ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; count_tmp.A ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
+; count_tmp.B ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
+; count_tmp.C ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ;
+; count_tmp.D ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ;
+; count_tmp.E ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ;
+; count_tmp.F ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; count_tmp.G ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; count_tmp.H ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; count_tmp.I ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; count_tmp.J ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; count_tmp.K ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; count_tmp.L ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; count_tmp.M ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; count_tmp.N ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; count_tmp.O ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
++-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; enable_tmp                                         ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 35    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 35    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 35    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; g90_clock_divider:clock_divider|elapse[18] ; 2       ;
+; g90_clock_divider:clock_divider|elapse[17] ; 2       ;
+; g90_clock_divider:clock_divider|elapse[16] ; 2       ;
+; g90_clock_divider:clock_divider|elapse[15] ; 2       ;
+; g90_clock_divider:clock_divider|elapse[13] ; 2       ;
+; g90_clock_divider:clock_divider|elapse[8]  ; 2       ;
+; g90_clock_divider:clock_divider|elapse[4]  ; 2       ;
+; g90_clock_divider:clock_divider|elapse[3]  ; 2       ;
+; g90_clock_divider:clock_divider|elapse[2]  ; 2       ;
+; g90_clock_divider:clock_divider|elapse[1]  ; 2       ;
+; g90_clock_divider:clock_divider|elapse[0]  ; 2       ;
+; Total number of inverted registers = 11    ;         ;
++--------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |g90_multi_mode_counter|g90_FSM:FSM|count_tmp ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "g90_lab1:decoder1" ;
++-----------+-------+----------+----------------+
+; Port      ; Type  ; Severity ; Details        ;
++-----------+-------+----------+----------------+
+; bcd[3..1] ; Input ; Info     ; Stuck at GND   ;
++-----------+-------+----------+----------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 35                          ;
+;     ENA CLR           ; 27                          ;
+;     ENA CLR SCLR      ; 8                           ;
+; arriav_lcell_comb     ; 72                          ;
+;     arith             ; 19                          ;
+;         1 data inputs ; 19                          ;
+;     normal            ; 53                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 8                           ;
+;         5 data inputs ; 3                           ;
+;         6 data inputs ; 12                          ;
+; boundary_port         ; 19                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.79                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -160,7 +353,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Apr 08 03:10:42 2019
+    Info: Processing started: Tue Apr 09 17:41:24 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g90_lab3 -c g90_lab3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -168,19 +361,35 @@ Info (12021): Found 2 design units, including 1 entities, in source file g90_clo
     Info (12022): Found design unit 1: g90_clock_divider-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_clock_divider.vhd Line: 15
     Info (12023): Found entity 1: g90_clock_divider File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_clock_divider.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file g90_lab1.vhd
-    Info (12022): Found design unit 1: g90_lab1-behavioral File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab1.vhd Line: 14
-    Info (12023): Found entity 1: g90_lab1 File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab1.vhd Line: 5
+    Info (12022): Found design unit 1: g90_lab1-behavioral File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab1.vhd Line: 16
+    Info (12023): Found entity 1: g90_lab1 File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab1.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file g90_multi_mode_counter.vhd
     Info (12022): Found design unit 1: g90_multi_mode_counter-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 18
     Info (12023): Found entity 1: g90_multi_mode_counter File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file g90_fsm.vhd
     Info (12022): Found design unit 1: g90_FSM-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_FSM.vhd Line: 13
     Info (12023): Found entity 1: g90_FSM File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_FSM.vhd Line: 5
-Error (10568): VHDL error at g90_multi_mode_counter.vhd(70): can't write to interface object "reset" of mode IN File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 70
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4859 megabytes
-    Error: Processing ended: Mon Apr 08 03:10:54 2019
-    Error: Elapsed time: 00:00:12
-    Error: Total CPU time (on all processors): 00:00:27
+Info (12127): Elaborating entity "g90_multi_mode_counter" for the top level hierarchy
+Warning (10631): VHDL Process Statement warning at g90_multi_mode_counter.vhd(64): inferring latch(es) for signal or variable "enable_tmp", which holds its previous value in one or more paths through the process File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 64
+Info (10041): Inferred latch for "enable_tmp" at g90_multi_mode_counter.vhd(64) File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 64
+Info (12128): Elaborating entity "g90_clock_divider" for hierarchy "g90_clock_divider:clock_divider" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 52
+Info (12128): Elaborating entity "g90_FSM" for hierarchy "g90_FSM:FSM" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 58
+Info (12128): Elaborating entity "g90_lab1" for hierarchy "g90_lab1:decoder0" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 95
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 13
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 13
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 13
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 89 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 70 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Tue Apr 09 17:41:38 2019
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:30
 
 
