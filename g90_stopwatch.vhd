@@ -106,30 +106,30 @@ begin
 		if (HEX0_Decoder = "1010") then 
 		-- enable reset of value of reset_0
 			reset_0 <= '1';
-		--end if;
-		
+		end if;
+	
 		-- reset hex1 when it becomes greater than 9
-		elsif (HEX1_Decoder = "1010") then 
+		if (HEX1_Decoder = "1010") then 
 			reset_1 <= '1';
-		--end if;
+		end if;
 		
 		-- reset hex2 when it becomes greater than 9
-		elsif (HEX2_Decoder = "1010") then 
+		if (HEX2_Decoder = "1010") then 
 			reset_2 <= '1';
-		--end if;
+		end if;
 		
 		-- reset hex3 when it becomes greater than 5
-		elsif (HEX3_Decoder = "0110") then 
+		if (HEX3_Decoder = "0110") then 
 			reset_3 <= '1';
-		--end if;
+		end if;
 		
 		-- reset hex4 when it becomes greater than 9
-		elsif (HEX4_Decoder = "1010") then 
+		if (HEX4_Decoder = "1010") then 
 			reset_4 <= '1';
-		--end if;
+		end if;
 		
 		-- reset hex5 when it becomes greater than 5
-		elsif (HEX5_Decoder = "0110") then 
+		if (HEX5_Decoder = "0110") then 
 			reset_5 <= '1';
 		end if;
 			
