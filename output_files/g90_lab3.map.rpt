@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g90_lab3
-Tue Apr 09 20:28:07 2019
+Tue Apr 09 22:40:37 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -47,7 +47,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Apr 09 20:28:07 2019       ;
+; Analysis & Synthesis Status     ; Successful - Tue Apr 09 22:40:37 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; g90_lab3                                    ;
 ; Top-level Entity Name           ; g90_multi_mode_counter                      ;
@@ -352,13 +352,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Apr 09 20:27:53 2019
+    Info: Processing started: Tue Apr 09 22:40:23 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g90_lab3 -c g90_lab3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file g90_clock_divider.vhd
-    Info (12022): Found design unit 1: g90_clock_divider-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_clock_divider.vhd Line: 16
-    Info (12023): Found entity 1: g90_clock_divider File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_clock_divider.vhd Line: 7
+    Info (12022): Found design unit 1: g90_clock_divider-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_clock_divider.vhd Line: 17
+    Info (12023): Found entity 1: g90_clock_divider File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_clock_divider.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file g90_lab1.vhd
     Info (12022): Found design unit 1: g90_lab1-behavioral File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab1.vhd Line: 17
     Info (12023): Found entity 1: g90_lab1 File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_lab1.vhd Line: 8
@@ -369,14 +369,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file g90_fsm
     Info (12022): Found design unit 1: g90_FSM-behaviour File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_FSM.vhd Line: 14
     Info (12023): Found entity 1: g90_FSM File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_FSM.vhd Line: 6
 Info (12127): Elaborating entity "g90_multi_mode_counter" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at g90_multi_mode_counter.vhd(64): signal "count_fsm" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 64
-Warning (10492): VHDL Process Statement warning at g90_multi_mode_counter.vhd(65): signal "count_fsm" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at g90_multi_mode_counter.vhd(68): signal "count_fsm" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 68
-Warning (10631): VHDL Process Statement warning at g90_multi_mode_counter.vhd(53): inferring latch(es) for signal or variable "enable_clock", which holds its previous value in one or more paths through the process File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 53
-Info (10041): Inferred latch for "enable_clock" at g90_multi_mode_counter.vhd(53) File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 53
-Info (12128): Elaborating entity "g90_clock_divider" for hierarchy "g90_clock_divider:clock_divider" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 77
-Info (12128): Elaborating entity "g90_FSM" for hierarchy "g90_FSM:FSM" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 80
-Info (12128): Elaborating entity "g90_lab1" for hierarchy "g90_lab1:decoder0" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 84
+Warning (10631): VHDL Process Statement warning at g90_multi_mode_counter.vhd(54): inferring latch(es) for signal or variable "enable_clock", which holds its previous value in one or more paths through the process File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 54
+Info (10041): Inferred latch for "enable_clock" at g90_multi_mode_counter.vhd(54) File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 54
+Info (12128): Elaborating entity "g90_clock_divider" for hierarchy "g90_clock_divider:clock_divider" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 78
+Info (12128): Elaborating entity "g90_FSM" for hierarchy "g90_FSM:FSM" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 81
+Info (12128): Elaborating entity "g90_lab1" for hierarchy "g90_lab1:decoder0" File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 85
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 12
     Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/dingm/OneDrive - McGill University/Winter 2019/ECSE 222/Labs/L2/g90_multi_mode_counter.vhd Line: 12
@@ -388,10 +385,10 @@ Info (21057): Implemented 90 device resources after synthesis - the final resour
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 14 output pins
     Info (21061): Implemented 71 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4873 megabytes
-    Info: Processing ended: Tue Apr 09 20:28:07 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Tue Apr 09 22:40:37 2019
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Total CPU time (on all processors): 00:00:30
 
 

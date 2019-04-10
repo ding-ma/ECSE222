@@ -43,6 +43,7 @@ architecture behaviour of g90_multi_mode_counter is
 	  signal enable_clock	: std_logic:= '0';
 	  
 	  signal count_fsm		: std_logic_vector(3 downto 0);
+	  
 	  signal count_0			: std_logic_vector(3 downto 0);
 	  signal count_1			: std_logic_vector(3 downto 0);
 	  
@@ -50,7 +51,7 @@ architecture behaviour of g90_multi_mode_counter is
 	begin
 
 	
-	process ( start, stop, reset,clk)
+	process ( start, stop,count_fsm, reset)
 	
 				begin
 				if ((reset = '0' or stop ='0') AND start = '1') then 
