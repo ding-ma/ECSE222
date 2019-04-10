@@ -1,7 +1,8 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 use ieee.std_logic_unsigned.all;
+use Work.all;
 
 entity g90_clock_divider is
 	Port(

@@ -1,26 +1,28 @@
 |g90_multi_mode_counter
-start => comb.IN1
-start => comb.IN1
-start => enable_tmp.IN0
-stop => enable_tmp.IN1
+start => process_0.IN1
+start => process_0.IN0
+stop => process_0.IN1
+stop => process_0.IN0
 direction => g90_FSM:FSM.direction
 reset => g90_clock_divider:clock_divider.reset
 reset => g90_FSM:FSM.reset
+reset => process_0.IN1
 clk => g90_clock_divider:clock_divider.clk
-HEX0[0] <= g90_lab1:decoder0.segment7[0]
-HEX0[1] <= g90_lab1:decoder0.segment7[1]
-HEX0[2] <= g90_lab1:decoder0.segment7[2]
-HEX0[3] <= g90_lab1:decoder0.segment7[3]
-HEX0[4] <= g90_lab1:decoder0.segment7[4]
-HEX0[5] <= g90_lab1:decoder0.segment7[5]
-HEX0[6] <= g90_lab1:decoder0.segment7[6]
-HEX1[0] <= g90_lab1:decoder1.segment7[0]
-HEX1[1] <= g90_lab1:decoder1.segment7[1]
-HEX1[2] <= g90_lab1:decoder1.segment7[2]
-HEX1[3] <= g90_lab1:decoder1.segment7[3]
-HEX1[4] <= g90_lab1:decoder1.segment7[4]
-HEX1[5] <= g90_lab1:decoder1.segment7[5]
-HEX1[6] <= g90_lab1:decoder1.segment7[6]
+clk => g90_FSM:FSM.clk
+HEX0[0] << g90_lab1:decoder0.segment7[0]
+HEX0[1] << g90_lab1:decoder0.segment7[1]
+HEX0[2] << g90_lab1:decoder0.segment7[2]
+HEX0[3] << g90_lab1:decoder0.segment7[3]
+HEX0[4] << g90_lab1:decoder0.segment7[4]
+HEX0[5] << g90_lab1:decoder0.segment7[5]
+HEX0[6] << g90_lab1:decoder0.segment7[6]
+HEX1[0] << g90_lab1:decoder1.segment7[0]
+HEX1[1] << g90_lab1:decoder1.segment7[1]
+HEX1[2] << g90_lab1:decoder1.segment7[2]
+HEX1[3] << g90_lab1:decoder1.segment7[3]
+HEX1[4] << g90_lab1:decoder1.segment7[4]
+HEX1[5] << g90_lab1:decoder1.segment7[5]
+HEX1[6] << g90_lab1:decoder1.segment7[6]
 
 
 |g90_multi_mode_counter|g90_clock_divider:clock_divider
