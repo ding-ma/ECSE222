@@ -12,8 +12,6 @@ entity g90_multi_mode_counter is
 			HEX1		: out std_logic_vector(6 downto 0));
 end g90_multi_mode_counter;
 
-
-
 architecture behaviour of g90_multi_mode_counter is
 
 --import FSM
@@ -47,26 +45,33 @@ architecture behaviour of g90_multi_mode_counter is
 	  signal count_0			: std_logic_vector(3 downto 0);
 	  signal count_1			: std_logic_vector(3 downto 0);
 	  
-	
 	begin
-
 	
 	process ( start, stop,count_fsm, reset)
 	
 				begin
 				
+				--this means that the clock should hold its current state, it is not counting up 
 				if (start = '0' and stop ='1') then
 					enable_clock <= '1';
 				end if;
 				
-				if ((reset = '0' or stop ='0') AND start = '1') then 
+				--the clock is counting up thus the state is changing
+				if (reset = '0' AND start = '1') then 
 					enable_clock <= '0'; 
-           end if;
-
+				end if;
+			  
+			  --if the clock is not stoped, it still counts up, same function as before
+			  if (stop ='0' AND start = '1') then 
+					enable_clock <= '0'; 
+				end if;
+			  --if the number is greater than 9, add 6 in order to make it compatible with bcd and 7 segment display
+			  --this is to use both hex0 and hex1 displays
 				if(count_fsm > "1001")then
 					count_0 <= std_logic_vector(unsigned(count_fsm)+"0110");
 					count_1 <= "0001";
 				else
+				--if it is not greater than 9, keep it at the same number and hex1 will be displayed as 0
 					count_0 <= count_fsm;
 					count_1 <= "0000";
 			   end if;

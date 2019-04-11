@@ -1,5 +1,5 @@
 Flow report for g90_lab3
-Tue Apr 09 22:41:30 2019
+Thu Apr 11 11:15:12 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Apr 09 22:41:30 2019       ;
+; Flow Status                     ; Successful - Thu Apr 11 11:15:12 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; g90_lab3                                    ;
 ; Top-level Entity Name           ; g90_multi_mode_counter                      ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 39 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 43                                          ;
+; Logic utilization (in ALMs)     ; 52 / 32,070 ( < 1 % )                       ;
+; Total registers                 ; 57                                          ;
 ; Total pins                      ; 19 / 457 ( 4 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/09/2019 22:40:24 ;
+; Start date & time ; 04/11/2019 11:13:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; g90_lab3            ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+------------------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name            ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+------------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589191.155486402405356         ; --            ; --                     ; --             ;
+; COMPILER_SIGNATURE_ID               ; 10995770589191.155499560007616         ; --            ; --                     ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --                     ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                 ; <None>        ; --                     ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --                     ; eda_simulation ;
@@ -99,12 +99,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4871 MB             ; 00:00:30                           ;
-; Fitter               ; 00:00:35     ; 1.0                     ; 6588 MB             ; 00:01:05                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4854 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 5129 MB             ; 00:00:05                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4753 MB             ; 00:00:02                           ;
-; Total                ; 00:01:02     ; --                      ; --                  ; 00:01:49                           ;
+; Analysis & Synthesis ; 00:00:21     ; 1.0                     ; 4874 MB             ; 00:00:47                           ;
+; Fitter               ; 00:00:57     ; 1.0                     ; 6627 MB             ; 00:01:44                           ;
+; Assembler            ; 00:00:12     ; 1.0                     ; 4850 MB             ; 00:00:12                           ;
+; Timing Analyzer      ; 00:00:12     ; 1.1                     ; 5150 MB             ; 00:00:12                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4757 MB             ; 00:00:03                           ;
+; Total                ; 00:01:45     ; --                      ; --                  ; 00:02:58                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

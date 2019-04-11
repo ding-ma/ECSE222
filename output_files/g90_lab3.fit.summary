@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Apr 09 22:41:13 2019
+Fitter Status : Successful - Thu Apr 11 11:14:39 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : g90_lab3
 Top-level Entity Name : g90_multi_mode_counter
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 39 / 32,070 ( < 1 % )
-Total registers : 43
+Logic utilization (in ALMs) : 52 / 32,070 ( < 1 % )
+Total registers : 57
 Total pins : 19 / 457 ( 4 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )

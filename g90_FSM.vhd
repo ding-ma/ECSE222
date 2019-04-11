@@ -15,17 +15,19 @@ architecture behaviour of g90_FSM is
 
 --different states represented by letters
 	type state is (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O);
-
+	--signal that represent each state
 	signal count_tmp : state;
 
 begin
 
     process(clk, reset) begin
+	--reset has to be active low
         if (reset = '0') then
-
 	    count_tmp <= A;
+		
+		--we are counting every rising_edge cycle of the clock
         elsif (rising_edge(clk)) then
-
+--enables the counting, active high
             if (enable = '1') then
 
 --starting state is ab
@@ -125,6 +127,7 @@ begin
                 end case;
 				--if anything else is presssed, stay at current state
             else
+			--if enable =0, it is not counting therefore it should keep its state
 				count_tmp <= count_tmp; 
 			end if;
 		end if;
