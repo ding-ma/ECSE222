@@ -54,20 +54,21 @@ architecture behaviour of g90_multi_mode_counter is
 	process ( start, stop,count_fsm, reset)
 	
 				begin
-				if ((reset = '0' or stop ='0') AND start = '1') then 
-					enable_clock <= '0'; 
-           end if;
-       
+				
 				if (start = '0' and stop ='1') then
 					enable_clock <= '1';
 				end if;
+				
+				if ((reset = '0' or stop ='0') AND start = '1') then 
+					enable_clock <= '0'; 
+           end if;
 
 				if(count_fsm > "1001")then
 					count_0 <= std_logic_vector(unsigned(count_fsm)+"0110");
 					count_1 <= "0001";
 				else
-				count_0 <= count_fsm;
-				count_1 <= "0000";
+					count_0 <= count_fsm;
+					count_1 <= "0000";
 			   end if;
 				
 			end process;
