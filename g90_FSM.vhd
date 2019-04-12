@@ -30,7 +30,7 @@ begin
 --enables the counting, active high
             if (enable = '1') then
 
---starting state is ab
+--starting state is A
 --if direction ==1, go to next state
 --if direction !=1, go to previous state
                 case count_tmp is
