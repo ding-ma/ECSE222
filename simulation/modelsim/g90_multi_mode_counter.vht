@@ -35,8 +35,8 @@ ARCHITECTURE g90_multi_mode_counter_arch OF g90_multi_mode_counter_vhd_tst IS
 -- signals                                                   
 SIGNAL clk : STD_LOGIC;
 SIGNAL direction : STD_LOGIC;
-SIGNAL HEX0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
-SIGNAL HEX1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+--SIGNAL HEX0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+--SIGNAL HEX1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL reset : STD_LOGIC;
 SIGNAL start : STD_LOGIC;
 SIGNAL stop : STD_LOGIC;
@@ -44,8 +44,8 @@ COMPONENT g90_multi_mode_counter
 	PORT (
 	clk : IN STD_LOGIC;
 	direction : IN STD_LOGIC;
-	HEX0 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
-	HEX1 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	--HEX0 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
+	--HEX1 : BUFFER STD_LOGIC_VECTOR(6 DOWNTO 0);
 	reset : IN STD_LOGIC;
 	start : IN STD_LOGIC;
 	stop : IN STD_LOGIC
@@ -57,8 +57,8 @@ BEGIN
 -- list connections between master ports and signals
 	clk => clk,
 	direction => direction,
-	HEX0 => HEX0,
-	HEX1 => HEX1,
+	--HEX0 => HEX0,
+	--HEX1 => HEX1,
 	reset => reset,
 	start => start,
 	stop => stop

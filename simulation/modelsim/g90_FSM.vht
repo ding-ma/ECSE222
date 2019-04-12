@@ -61,20 +61,30 @@ init : PROCESS
 -- variable declarations                                     
 BEGIN                                                        
         -- code that executes only once  
-	clk <= NOT clk;
-	wait for 500 ms;
-		  
-WAIT;                                                       
+	clk <= '1';
+	WAIT FOR 10 ns;
+	clk <= '0';
+	WAIT FOR 10 ns;
+                                                       
 END PROCESS init;                                           
 always : PROCESS                                              
 -- optional sensitivity list                                  
 -- (        )                                                 
 -- variable declarations                                      
 BEGIN                                                         
-        -- code executes for every event on sensitivity list  
+        -- code executes for every event on sensitivity list 
+	
+
+	direction <= '0';
+	enable <= '0';
+	reset <= '1';
+	wait for 200 ns;
+	
 	direction <= '1';
 	enable <= '1';
-
-WAIT;                                                        
+	reset<='0';
+	wait for 200 ns;
+		
+	                                                       
 END PROCESS always;                                          
 END g90_FSM_arch;
