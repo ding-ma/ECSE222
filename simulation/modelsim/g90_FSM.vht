@@ -77,12 +77,12 @@ BEGIN
 
 	direction <= '0';
 	enable <= '0';
-	reset <= '1';
+	reset <= '0';
 	wait for 200 ns;
 	
 	direction <= '1';
 	enable <= '1';
-	reset<='0';
+	reset<='1';
 	wait for 200 ns;
 		
 	                                                       
